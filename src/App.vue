@@ -1,28 +1,52 @@
 <template>
-  <div id="app">
-    <img alt="Vue logo" src="./assets/logo.png">
-    <HelloWorld msg="Welcome to Your Vue.js App"/>
-  </div>
+	<v-app>
+		<v-app-bar app color="primary" dark v-if="!hideAppBar">
+			<div class="d-flex align-center">
+				<v-icon>FlowBank</v-icon>
+			</div>
+
+			<v-spacer></v-spacer>
+
+			<router-link to="/signup">
+				<v-btn text>
+					<span class="mr-2">Sign Up</span>
+					<v-icon>mdi-open-in-new</v-icon>
+				</v-btn>
+			</router-link>
+		</v-app-bar>
+		<router-view></router-view>
+	</v-app>
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue'
 
 export default {
   name: 'App',
-  components: {
-    HelloWorld
-  }
-}
-</script>
 
-<style>
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
-}
-</style>
+  data: () => ({
+	hideAppBar: false
+  }),
+
+  computed : {
+		
+  },
+
+	watch: { 
+		$route (to){
+			let current_path = to.path;
+			this.toggleAppBar(current_path)
+		}
+	},
+
+	methods: {
+		toggleAppBar(path) {
+			let routes = ['/signup'];
+			this.hideAppBar = routes.includes(path);
+		}
+	},
+
+  created() {
+	this.toggleAppBar(this.$router.currentRoute.path);
+  }
+};
+</script>
