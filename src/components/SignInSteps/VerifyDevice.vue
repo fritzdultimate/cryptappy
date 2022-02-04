@@ -1,14 +1,16 @@
 <template>
     <div>
         <v-card-title class="px-0" style="cursor:pointer">
-            <v-icon
-                large
-                left
-                class="blue--text text--lighten-2 text-subtitle-1"
-            >
-                mdi-arrow-left
-            </v-icon>
-            <span class="font-weight-bold lighten-3 text-caption">Back</span>
+            <div @click="$emit('moveBack')">
+                <v-icon
+                    large
+                    left
+                    class="blue--text text--lighten-2 text-subtitle-1"
+                >
+                    mdi-arrow-left
+                </v-icon>
+                <span class="font-weight-bold lighten-3 text-caption">Back</span>
+            </div>
             <v-spacer></v-spacer>
             <span class="blue--text text--lighten-2 text-caption font-weight-bold">
                 fritzdultimate@gmail.com
@@ -64,7 +66,7 @@ export default {
     },
 
     mounted() {
-        this.verifyDevice();
+        // this.verifyDevice();
     }
 }
 </script>

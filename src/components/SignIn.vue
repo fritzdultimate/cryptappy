@@ -24,7 +24,7 @@
                             </v-card-title>
 
                             
-                            <verify-device v-if="emailIsValid && !deviceVerified" v-on:validate="verifyDevice()"></verify-device>
+                            <verify-device v-if="emailIsValid && !deviceVerified" v-on:validate="verifyDevice()" @moveBack="moveBack"></verify-device>
                             <sign-in-email v-if="!emailIsValid" v-on:validate="validateEmail($event)"></sign-in-email>
                             <sign-in-password v-if="emailIsValid && deviceVerified"></sign-in-password>
 
@@ -83,6 +83,10 @@ export default {
             }
         },
 
+        moveBack() {
+            this.emailIsValid = false;
+        },
+
         validateEmail (v) {
             if(v) {
                 // User provided a valid email and mail sent to email
@@ -95,6 +99,11 @@ export default {
         },
 
         backTo() {}
+    },
+
+    mounted() {
+        console.log(process.env, 4)
+        console.log(process.env.VUE_APP_ROOT_API)
     }
 }
 </script>
