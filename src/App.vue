@@ -40,7 +40,7 @@ export default {
 
 	methods: {
 		toggleAppBar(path) {
-			let routes = ['/signup'];
+			let routes = ['/signup', '/signin'];
 			this.hideAppBar = routes.includes(path);
 		}
 	},

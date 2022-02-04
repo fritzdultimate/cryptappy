@@ -89,30 +89,30 @@
                                 ></v-text-field>
 
                                 <v-text-field
-                                v-model="password"
-                                :rules="passwordRules"
-                                :counter="maxPasswordLength"
-                                outlined
-                                label="Password"
-                                required
-                                :type="password ? 'password' : 'text'"
-                                :append-icon="passwordEyeState"
-                                @click:append="viewPassword('input__password', 'passwordEyeOff')"
-                                id="input__password"
+                                    v-model="password"
+                                    :rules="passwordRules"
+                                    :counter="maxPasswordLength"
+                                    outlined
+                                    label="Password"
+                                    required
+                                    :type="password ? 'password' : 'text'"
+                                    :append-icon="passwordEyeState"
+                                    @click:append="viewPassword('input__password', 'passwordEyeOff')"
+                                    id="input__password"
                                 
                                 ></v-text-field>
 
                                 <v-text-field
-                                v-model="confirm_password"
-                                :rules="confirmPasswordRules"
-                                :counter="maxPasswordLength"
-                                outlined
-                                label="Confirm Password"
-                                :type="confirm_password ? 'password' : 'text'"
-                                :append-icon="confirmPasswordEyeState"
-                                @click:append="viewPassword('input__confirm_password', 'confirmPasswordEyeOff')"
-                                required
-                                id="input__confirm_password"
+                                    v-model="confirm_password"
+                                    :rules="confirmPasswordRules"
+                                    :counter="maxPasswordLength"
+                                    outlined
+                                    label="Confirm Password"
+                                    :type="confirm_password ? 'password' : 'text'"
+                                    :append-icon="confirmPasswordEyeState"
+                                    @click:append="viewPassword('input__confirm_password', 'confirmPasswordEyeOff')"
+                                    required
+                                    id="input__confirm_password"
                                 ></v-text-field>
 
                                 <v-select
@@ -306,7 +306,7 @@ export default {
         viewPassword(id, data) {
             this[data] = !this[data];
             let el = document.getElementById(id);
-            el.type = this[data] ? 'text' : 'password';       b   
+            el.type = this[data] ? 'text' : 'password';
         }
         
     },
@@ -330,9 +330,5 @@ export default {
         box-sizing: border-box;
         height: 100%;
         position: relative;
-    }
-
-    .v-text-field--outlined fieldset {
-        background: red;
     }
 </style>
