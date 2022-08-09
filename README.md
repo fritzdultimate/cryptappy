@@ -2,7 +2,7 @@
 
 ## Project setup
 ```
-n
+np
 ```
 
 ### Compiles and hot-reloads for development
