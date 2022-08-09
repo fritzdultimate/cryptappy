@@ -2,7 +2,7 @@
 
 ## Project setup
 ```
-npm insta
+npm instal
 ```
 
 ### Compiles and hot-reloads for development
